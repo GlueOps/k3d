@@ -4,7 +4,7 @@ metadata:
   name: captain
 servers: 1
 agents: 6
-image: rancher/k3s:v1.28.14-k3s1@sha256:6d19b354ee16e57829a370a756951c4e3782be3bf236cf5e3762f479e281f034
+image: rancher/k3s:v1.31.1-k3s1@sha256:880e468a233598a1e7a05722b5859d7ccd93cad17471cdd5d3a2d7ff25e7b91d
 registries:
 #   create:
 #     name: docker-io # name of the registry container
