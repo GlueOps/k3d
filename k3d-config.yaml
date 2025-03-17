@@ -4,7 +4,7 @@ metadata:
   name: captain
 servers: 1
 agents: 6
-image: rancher/k3s:v1.30.9-k3s1@sha256:1273f15423b0dd0625e0b4742f8fb2bff1ce1ba4853cce1b5961ba9294b45fad
+image: rancher/k3s:v1.30.10-k3s1@sha256:e48e5796e36575593a0beb797e3fe181b69946f753ed30b3a37646215f0353db
 env:
   - envVar: K3S_DEBUG=true
     nodeFilters:
