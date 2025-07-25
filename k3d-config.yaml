@@ -4,6 +4,10 @@ metadata:
   name: captain
 servers: 1
 agents: 6
+kubeAPI: # same as `--api-port myhost.my.domain:6443` (where the name would resolve to 127.0.0.1)
+  host: "127.0.0.1" # important for the `server` setting in the kubeconfig
+  hostIP: "127.0.0.1" # where the Kubernetes API will be listening on
+  hostPort: "6443" # where the Kubernetes API listening port will be mapped to on your host system
 image: rancher/k3s:v1.31.10-k3s1@sha256:8c7032ab267c3a571bac4fafffbb54e249386dbc73ebe5532fb390fa998a7936
 env:
   - envVar: K3S_DEBUG=true
