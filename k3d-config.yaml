@@ -8,52 +8,11 @@ kubeAPI: # same as `--api-port myhost.my.domain:6443` (where the name would reso
   host: "127.0.0.1" # important for the `server` setting in the kubeconfig
   hostIP: "127.0.0.1" # where the Kubernetes API will be listening on
   hostPort: "6443" # where the Kubernetes API listening port will be mapped to on your host system
-image: rancher/k3s:v1.31.10-k3s1@sha256:8c7032ab267c3a571bac4fafffbb54e249386dbc73ebe5532fb390fa998a7936
+image: replicas.mirror.gpkg.io/proxy-docker-io/rancher/k3s:v1.31.10-k3s1@sha256:8c7032ab267c3a571bac4fafffbb54e249386dbc73ebe5532fb390fa998a7936
 env:
   - envVar: K3S_DEBUG=true
     nodeFilters:
       - server:*
-registries:
-#   create:
-#     name: docker-io # name of the registry container
-#     proxy:
-#       remoteURL: https://registry-1.docker.io # proxy DockerHub
-#       username: <DOCKER_USERNAME>
-#       password: <DOCKER_PASSWORD>
-#     volumes:
-#       - /tmp/reg:/var/lib/registry # persist data locally in /tmp/reg
-#   config: | # tell K3s to use this registry when pulling from DockerHub
-#     mirrors:
-#       "docker.io":
-#         endpoint:
-#           - http://docker-io:5000
-  config: | 
-    mirrors:
-      "docker.io":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5000
-      "quay.io":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5001
-      "ghcr.io":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5002
-      "gcr.io":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5003
-      "public.ecr.aws":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5004
-      "mcr.microsoft.com":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5005
-      "registry.gitlab.com":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5006
-      "registry.k8s.io":
-        endpoint:
-          - http://dev-only-registry.glueopshosted.com:5007
-          
 options:
   k3d:
     disableLoadbalancer: true
