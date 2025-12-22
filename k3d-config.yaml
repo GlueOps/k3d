@@ -8,7 +8,7 @@ kubeAPI: # same as `--api-port myhost.my.domain:6443` (where the name would reso
   host: "127.0.0.1" # important for the `server` setting in the kubeconfig
   hostIP: "127.0.0.1" # where the Kubernetes API will be listening on
   hostPort: "6443" # where the Kubernetes API listening port will be mapped to on your host system
-image: dockerhub.repo.gpkg.io/rancher/k3s:v1.32.10-k3s1@sha256:0ccc2aec930ef9cecae69e097260159de27b3d2264b25ea41c9d6c9dee628965
+image: dockerhub.repo.gpkg.io/rancher/k3s:v1.32.11-k3s1@sha256:6262dcdd226eb5fafe1dab45d0c4df594bee3aef5f950a131c2908eae1e96d91
 env:
   - envVar: K3S_DEBUG=true
     nodeFilters:
