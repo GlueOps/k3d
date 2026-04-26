@@ -13,6 +13,12 @@ env:
   - envVar: K3S_DEBUG=true
     nodeFilters:
       - server:*
+registries:
+  config: | 
+    mirrors:
+      "docker.io":
+        endpoint:
+          - https://dockerhub.repo.gpkg.io
 options:
   k3d:
     disableLoadbalancer: true
