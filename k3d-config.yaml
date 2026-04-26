@@ -2,6 +2,7 @@ apiVersion: k3d.io/v1alpha5
 kind: Simple 
 metadata:
   name: captain
+network: k3d-glueops-net
 servers: 1
 agents: 6
 kubeAPI: # same as `--api-port myhost.my.domain:6443` (where the name would resolve to 127.0.0.1)
